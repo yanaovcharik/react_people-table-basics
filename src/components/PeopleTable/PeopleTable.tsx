@@ -1,11 +1,20 @@
 import { useLocation } from 'react-router-dom';
 import { Loader } from '../Loader';
 import { PersonLink } from '../PersonLink';
-import { usePeople } from '../../hooks/usePeople';
 import classNames from 'classnames';
+import { Person } from '../../types';
 
-export const PeopleTable = () => {
-  const { people, isLoading, error } = usePeople();
+interface PeopleTableProps {
+  people: Person[];
+  isLoading: boolean;
+  error: string | null;
+}
+
+export const PeopleTable: React.FC<PeopleTableProps> = ({
+  people,
+  isLoading,
+  error,
+}) => {
   const location = useLocation();
 
   return (
