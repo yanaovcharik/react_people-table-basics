@@ -7,7 +7,7 @@ import { Person } from '../../types';
 interface PeopleTableProps {
   people: Person[];
   isLoading: boolean;
-  error: string | null;
+  error: boolean;
 }
 
 export const PeopleTable: React.FC<PeopleTableProps> = ({
